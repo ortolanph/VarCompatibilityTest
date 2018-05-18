@@ -1,0 +1,18 @@
+@startuml
+
+[legacy-java7-api]
+
+[java8-utils-api]
+
+[my-java9-module]
+
+[java10-compatibility-test]
+
+[legacy-java7-api] -up-> [java8-utils-api]
+[legacy-java7-api] -up-> [my-java9-module]
+[java8-utils-api] -up-> [my-java9-module]
+[my-java9-module] -up-> [java10-compatibility-test]
+[java8-utils-api] -up-> [java10-compatibility-test]
+[legacy-java7-api] -up-> [java10-compatibility-test]
+
+@enduml

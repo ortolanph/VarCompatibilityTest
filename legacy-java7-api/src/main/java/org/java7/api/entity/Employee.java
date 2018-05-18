@@ -3,12 +3,17 @@ package org.java7.api.entity;
 import java.util.Objects;
 
 public class Employee {
+
     private int id;
+
     private String name;
+
     private int tieline;
+
     private boolean boss;
 
-    public Employee() { }
+    public Employee() {
+    }
 
     public Employee(int id, String name, int tieline, boolean boss) {
         this.id = id;

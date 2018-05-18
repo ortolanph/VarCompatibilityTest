@@ -5,14 +5,21 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Project {
+
     private String name;
+
     private int businessCode;
+
     private int duration;
+
     private Set<ProgrammingLanguage> languages = new HashSet<>();
+
     private Set<Database> databases = new HashSet<Database>();
+
     private Set<Employee> team = new HashSet<>();
 
-    public Project() { }
+    public Project() {
+    }
 
     public Project(String name, int businessCode, int duration) {
         this.name = name;

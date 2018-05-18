@@ -6,5 +6,4 @@ public class Java9InformationProvider {
         SystemProperty.printPropertyReport();
     }
 
-
 }

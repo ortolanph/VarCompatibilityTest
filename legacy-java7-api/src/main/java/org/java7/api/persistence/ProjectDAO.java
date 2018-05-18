@@ -8,8 +8,9 @@ import java.util.NoSuchElementException;
 
 public class ProjectDAO {
 
-    private List<Project> projects = new ArrayList<>();
     private static final ProjectDAO INSTANCE = new ProjectDAO();
+
+    private List<Project> projects = new ArrayList<>();
 
     private ProjectDAO getInstance() {
         return INSTANCE;
@@ -19,15 +20,16 @@ public class ProjectDAO {
         return projects.add(project);
     }
 
-    public void updateProject(Project project) {
+    public Project updateProject(Project project) {
         Project oldProject = findProject(project.getBusinessCode());
         removeProject(oldProject);
         insertProject(project);
+        return project;
     }
 
     public Project findProject(int businessCode) {
-        for(Project project : projects) {
-            if(project.getBusinessCode() == businessCode) {
+        for (Project project : allProjects()) {
+            if (project.getBusinessCode() == businessCode) {
                 return project;
             }
         }
@@ -37,6 +39,10 @@ public class ProjectDAO {
 
     public boolean removeProject(Project project) {
         return projects.remove(project);
+    }
+
+    public List<Project> allProjects() {
+        return new ArrayList<>(projects);
     }
 
 }

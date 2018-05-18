@@ -1,15 +1,31 @@
 package org.java8.utils.api.validators.impl;
 
-import org.java7.api.entity.Employee;
+import org.java7.api.entity.Project;
 import org.java8.utils.api.validators.Validator;
 
-import java.util.Set;
+public class TeamValidator implements Validator<Project> {
 
-public class TeamValidator implements Validator<Set<Employee>> {
+    private BossValidator bossValidator;
 
-    @Override public boolean validate(Set<Employee> employees) {
-        boolean hasOneBoss = employees.stream().filter(e -> e.isBoss()).count() == 1;
-        boolean hasAtLeastOneEmployee = employees.stream().filter(e -> !e.isBoss()).count() >= 1;
+    private EmployeeValidator employeeValidator;
+
+    public TeamValidator(BossValidator bossValidator, EmployeeValidator employeeValidator) {
+        this.bossValidator = bossValidator;
+        this.employeeValidator = employeeValidator;
+    }
+
+    @Override public boolean validate(Project project) {
+        boolean hasOneBoss = project
+            .getTeam()
+            .stream()
+            .filter(e -> bossValidator.validate(e))
+            .count() == 1;
+
+        boolean hasAtLeastOneEmployee = project
+            .getTeam()
+            .stream()
+            .filter(e -> employeeValidator.validate(e))
+            .count() >= 1;
 
         return hasOneBoss && hasAtLeastOneEmployee;
     }

@@ -5,9 +5,9 @@ import org.java8.utils.api.validators.Validator;
 
 import java.util.Objects;
 
-public class ProjectNameValidator implements Validator<Project> {
+public class ProjectInstanceValidator implements Validator<Project> {
 
     @Override public boolean validate(Project project) {
-        return !Objects.isNull(project.getName());
+        return Objects.nonNull(project) && (project instanceof Project);
     }
 }
