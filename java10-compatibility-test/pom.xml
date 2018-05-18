@@ -27,6 +27,11 @@
         </dependency>
         <dependency>
             <groupId>org.compatible.var</groupId>
+            <artifactId>my-java9-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.compatible.var</groupId>
             <artifactId>legacy-java7-api</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>

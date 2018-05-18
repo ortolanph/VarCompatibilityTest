@@ -11,8 +11,6 @@ import java.util.stream.IntStream;
 
 public class ProjectController {
 
-    private ProjectDAO projectDAO;
-
     List<Validator<Project>> validators =
         List.of(
             new ProjectNameValidator(),
@@ -31,6 +29,8 @@ public class ProjectController {
             "Insufficient database platforms",
             "More than one boss or no employees");
 
+    private ProjectDAO projectDAO;
+
     public ProjectController(ProjectDAO projectDAO) {
         this.projectDAO = projectDAO;
     }
@@ -41,7 +41,7 @@ public class ProjectController {
         IntStream
             .range(0, validators.size())
             .forEach(i -> {
-                if(!validators.get(i).validate(project)) {
+                if (!validators.get(i).validate(project)) {
                     errorMessages.add(messages.get(i));
                 }
             });
