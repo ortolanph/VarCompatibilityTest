@@ -10,7 +10,7 @@ public class ProjectDurationValidator implements Validator<Project> {
     private static final Integer MAXIMUM_DURATION = 12;
 
     @Override public boolean validate(Project project) {
-        return (project.getDuration() >= MINIMUM_DURATION) &&
-            (project.getDuration() <= MAXIMUM_DURATION);
+        return !((project.getDuration() >= MINIMUM_DURATION) &&
+            (project.getDuration() <= MAXIMUM_DURATION));
     }
 }

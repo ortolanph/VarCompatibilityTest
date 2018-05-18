@@ -6,6 +6,6 @@ import org.java8.utils.api.validators.Validator;
 public class ProgrammingLanguagesValidator implements Validator<Project> {
 
     @Override public boolean validate(Project project) {
-        return project.getLanguages().size() > 0;
+        return project.getLanguages().isEmpty();
     }
 }

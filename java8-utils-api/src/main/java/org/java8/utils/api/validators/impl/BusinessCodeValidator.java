@@ -10,7 +10,7 @@ public class BusinessCodeValidator implements Validator<Project> {
     private static final Integer UPPER_LIMIT = 9999;
 
     @Override public boolean validate(Project project) {
-        return (project.getBusinessCode() >= LOWER_LIMIT) &&
-            (project.getBusinessCode() <= UPPER_LIMIT);
+        return !((project.getBusinessCode() >= LOWER_LIMIT) &&
+            (project.getBusinessCode() <= UPPER_LIMIT));
     }
 }

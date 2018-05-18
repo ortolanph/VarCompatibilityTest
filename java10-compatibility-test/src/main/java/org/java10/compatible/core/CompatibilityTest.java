@@ -60,6 +60,7 @@ public class CompatibilityTest {
         var instanceValidator = new ProjectInstanceValidator();
 
         System.out.println(instanceValidator.validate(project));
+        System.out.println(project);
 
         var errors = controller.validateProject(project);
 

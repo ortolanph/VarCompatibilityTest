@@ -8,6 +8,6 @@ import java.util.Objects;
 public class ProjectNameValidator implements Validator<Project> {
 
     @Override public boolean validate(Project project) {
-        return !Objects.isNull(project.getName());
+        return Objects.isNull(project.getName());
     }
 }

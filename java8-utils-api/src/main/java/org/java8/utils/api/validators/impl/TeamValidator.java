@@ -27,6 +27,6 @@ public class TeamValidator implements Validator<Project> {
             .filter(e -> employeeValidator.validate(e))
             .count() >= 1;
 
-        return hasOneBoss && hasAtLeastOneEmployee;
+        return !hasOneBoss && !hasAtLeastOneEmployee;
     }
 }

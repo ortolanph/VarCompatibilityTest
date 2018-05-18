@@ -41,7 +41,7 @@ public class ProjectController {
         IntStream
             .range(0, validators.size())
             .forEach(i -> {
-                if (!validators.get(i).validate(project)) {
+                if (validators.get(i).validate(project)) {
                     errorMessages.add(messages.get(i));
                 }
             });
