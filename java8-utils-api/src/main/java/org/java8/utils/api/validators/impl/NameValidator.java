@@ -5,9 +5,12 @@ import org.java8.utils.api.validators.Validator;
 
 import java.util.Objects;
 
-public class ProjectNameValidator implements Validator<Project> {
+public class NameValidator implements Validator<Project> {
+
+    private static final String EMPTY_STRING = "";
 
     @Override public boolean validate(Project project) {
-        return Objects.isNull(project.getName());
+        return !(Objects.isNull(project.getName()) ||
+            EMPTY_STRING.equals(project.getName().trim()));
     }
 }

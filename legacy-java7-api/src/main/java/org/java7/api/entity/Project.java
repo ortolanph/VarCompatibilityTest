@@ -14,7 +14,7 @@ public class Project {
 
     private Set<ProgrammingLanguage> languages = new HashSet<>();
 
-    private Set<Database> databases = new HashSet<Database>();
+    private Set<Database> databases = new HashSet<>();
 
     private Set<Employee> team = new HashSet<>();
 

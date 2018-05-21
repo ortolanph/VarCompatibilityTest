@@ -64,6 +64,8 @@ public class CompatibilityTest {
 
         var errors = controller.validateProject(project);
 
+        System.out.println("Errors validating project");
+
         errors.forEach(System.out::println);
     }
 

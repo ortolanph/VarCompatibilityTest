@@ -7,15 +7,14 @@ import org.java8.utils.api.validators.impl.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class ProjectController {
 
     List<Validator<Project>> validators =
         List.of(
-            new ProjectNameValidator(),
+            new NameValidator(),
             new BusinessCodeValidator(),
-            new ProjectDurationValidator(),
+            new DurationValidator(),
             new ProgrammingLanguagesValidator(),
             new DatabasesValidator(),
             new TeamValidator(new BossValidator(), new EmployeeValidator()));
@@ -38,15 +37,15 @@ public class ProjectController {
     public List<String> validateProject(Project project) {
         List<String> errorMessages = new ArrayList<>();
 
-        IntStream
-            .range(0, validators.size())
-            .forEach(i -> {
-                if (validators.get(i).validate(project)) {
-                    errorMessages.add(messages.get(i));
-                }
-            });
+        for (int i = 0; i < validators.size(); i++) {
+            Validator validator = validators.get(i);
 
-        return messages;
+            if (!validator.validate(project)) {
+                errorMessages.add(messages.get(i));
+            }
+        }
+
+        return errorMessages;
     }
 
     public boolean insertNewProject(Project project) {
