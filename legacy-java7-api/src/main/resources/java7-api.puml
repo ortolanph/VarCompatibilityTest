@@ -1,0 +1,64 @@
+@startuml
+
+package org.java7.api {
+
+    package entity {
+
+        class Project {
+            - String name
+            - int businessCode
+            - int duration
+        }
+
+        class Employee {
+            - int id
+            - String name
+            - int tieline
+            - boolean boss
+            + Employee()
+            + buildAnEmployee(int id, String name, int tieline)
+            + buildABoss(int id, String name, int tieline)
+        }
+
+        enum Database {
+            ORACLE,
+            POSTGRESQL,
+            DB2,
+            SQL_SERVER,
+            MY_SQL
+        }
+
+        enum ProgrammingLanguage {
+            JAVA,
+            JAVASCRIPT,
+            PL_SQL,
+            HTML5,
+            CSS
+        }
+
+        Project "2" o-- "many" Employee
+        Project "1" o-- "many" Database
+        Project "1" o-- "many" ProgrammingLanguage
+
+    }
+
+    package persistence {
+
+        class ProjectDAO {
+            - {static} ProjectDAO INSTANCE
+            + {static} ProjectDAO getInstance()
+            + boolean insertProject(Project project)
+            + Project updateProject(Project project)
+            + Project findProject(int businessCode)
+            + boolean removeProject(Project project)
+            + List<Project> allProjects()
+        }
+
+        ProjectDAO "0" -- "many" Project
+
+    }
+
+}
+
+@enduml
+

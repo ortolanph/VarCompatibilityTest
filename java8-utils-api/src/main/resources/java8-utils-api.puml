@@ -1,0 +1,45 @@
+@startuml
+
+interface Validator<E> {
+    + boolean validate(E e)
+}
+
+class BossValidator<Employee>
+
+class BusinessCodeValidator<Project>
+
+class DatabasesValidator<Project>
+
+class DurationValidator<Project>
+
+class EmployeeValidator<Employee>
+
+class NameValidator<Project>
+
+class ProgrammingLanguageValidator<Project>
+
+class ProjectInstanceValidator<Project>
+
+class TeamValidator<Project>
+
+Validator <|-- BossValidator
+
+Validator <|-- BusinessCodeValidator
+
+Validator <|-- BusinessCodeValidator
+
+Validator <|-- DatabasesValidator
+
+Validator <|-- DurationValidator
+
+Validator <|-- EmployeeValidator
+
+Validator <|-- NameValidator
+
+Validator <|-- ProgrammingLanguageValidator
+
+Validator <|-- ProjectInstanceValidator
+
+Validator <|-- TeamValidator
+
+@enduml
