@@ -10,8 +10,6 @@ import java.util.Objects;
  */
 public class NameValidator implements Validator<Project> {
 
-    private static final String EMPTY_STRING = "";
-
     /**
      * Validates if the name is not null or empty.
      *
@@ -20,6 +18,6 @@ public class NameValidator implements Validator<Project> {
      */
     @Override public boolean validate(Project project) {
         return !(Objects.isNull(project.getName()) ||
-            EMPTY_STRING.equals(project.getName().trim()));
+            !project.getName().isEmpty());
     }
 }
