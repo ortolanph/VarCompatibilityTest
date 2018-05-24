@@ -2,6 +2,9 @@ package org.java7.api.entity;
 
 import java.util.Objects;
 
+/**
+ * The employee entity. It must represent an employee or a boss.
+ */
 public class Employee {
 
     private int id;
@@ -12,9 +15,20 @@ public class Employee {
 
     private boolean boss;
 
+    /**
+     * Builds an employee from scratch.
+     */
     public Employee() {
     }
 
+    /**
+     * Builds an employee or a boss.
+     *
+     * @param id the employee registration code
+     * @param name the employee name
+     * @param tieline the employee tie line
+     * @param boss qualifies the employee as an employee if <code>false</code> or as a boss if <code>true</code>
+     */
     public Employee(int id, String name, int tieline, boolean boss) {
         this.id = id;
         this.name = name;
@@ -22,10 +36,26 @@ public class Employee {
         this.boss = boss;
     }
 
+    /**
+     * Utility method to build an employee.
+     *
+     * @param id the employee registration code
+     * @param name the employee name
+     * @param tieline the employee tie line
+     * @return a Employee instance that is qualified as an employee
+     */
     public static Employee buildAnEmployee(int id, String name, int tieline) {
         return new Employee(id, name, tieline, false);
     }
 
+    /**
+     * Utility method to build a boss.
+     *
+     * @param id the boss registration code
+     * @param name the boss name
+     * @param tieline the boss tie line
+     * @return a Employee instance that is qualified as a boss
+     */
     public static Employee buildABoss(int id, String name, int tieline) {
         return new Employee(id, name, tieline, true);
     }

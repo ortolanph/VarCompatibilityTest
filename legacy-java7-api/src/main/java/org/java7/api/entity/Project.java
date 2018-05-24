@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * The project entity.
+ */
 public class Project {
 
     private String name;
@@ -18,9 +21,19 @@ public class Project {
 
     private Set<Employee> team = new HashSet<>();
 
+    /**
+     * Builds a project from scratch.
+     */
     public Project() {
     }
 
+    /**
+     * Builds a project with name, businessCode, and duration.
+     *
+     * @param name the project name
+     * @param businessCode the internal business code
+     * @param duration the project duration
+     */
     public Project(String name, int businessCode, int duration) {
         this.name = name;
         this.businessCode = businessCode;
