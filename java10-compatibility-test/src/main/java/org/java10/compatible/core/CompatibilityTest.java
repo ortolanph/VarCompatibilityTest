@@ -17,7 +17,7 @@ public class CompatibilityTest {
     private static final int EIGHT_MONTHS = 8;
 
     public static void main(String[] args) {
-        var dao = new ProjectDAO();
+        var dao = ProjectDAO.getInstance();
 
         var project = new Project();
 
