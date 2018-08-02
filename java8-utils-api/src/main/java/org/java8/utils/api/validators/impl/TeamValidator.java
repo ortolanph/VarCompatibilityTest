@@ -15,7 +15,7 @@ public class TeamValidator implements Validator<Project> {
     /**
      * Builds a TeamValidator instance.
      *
-     * @param bossValidator a BossValidator instance
+     * @param bossValidator     a BossValidator instance
      * @param employeeValidator a EmployeeValidator instance
      * @see BossValidator
      * @see EmployeeValidator

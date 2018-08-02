@@ -1,16 +1,20 @@
 @startuml
 
-class ProjectController {
-    - List<Validator<Project>> validators
-    - List<String> messages
-    - private ProjectDAO projectDAO
-    + ProjectController(ProjectDAO projectDAO)
-    + List<String> validateProject(Project project)
-    + boolean insertNewProject(Project project)
-    + Project updateProject(Project project)
-    + Project findProject(int businessCode)
-    + boolean removeProject(Project project)
-    + List<Project> allProjects()
+package org.java9.module {
+
+    class ProjectController {
+        - List<Validator<Project>> validators
+        - List<String> messages
+        - private ProjectDAO projectDAO
+        + ProjectController(ProjectDAO projectDAO)
+        + List<String> validateProject(Project project)
+        + boolean insertNewProject(Project project)
+        + Project updateProject(Project project)
+        + Project findProject(int businessCode)
+        + boolean removeProject(Project project)
+        + List<Project> allProjects()
+    }
+
 }
 
 @enduml

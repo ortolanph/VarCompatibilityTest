@@ -30,9 +30,9 @@ public class Project {
     /**
      * Builds a project with name, businessCode, and duration.
      *
-     * @param name the project name
+     * @param name         the project name
      * @param businessCode the internal business code
-     * @param duration the project duration
+     * @param duration     the project duration
      */
     public Project(String name, int businessCode, int duration) {
         this.name = name;

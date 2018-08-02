@@ -24,10 +24,10 @@ public class Employee {
     /**
      * Builds an employee or a boss.
      *
-     * @param id the employee registration code
-     * @param name the employee name
+     * @param id      the employee registration code
+     * @param name    the employee name
      * @param tieline the employee tie line
-     * @param boss qualifies the employee as an employee if <code>false</code> or as a boss if <code>true</code>
+     * @param boss    qualifies the employee as an employee if <code>false</code> or as a boss if <code>true</code>
      */
     public Employee(int id, String name, int tieline, boolean boss) {
         this.id = id;
@@ -39,8 +39,8 @@ public class Employee {
     /**
      * Utility method to build an employee.
      *
-     * @param id the employee registration code
-     * @param name the employee name
+     * @param id      the employee registration code
+     * @param name    the employee name
      * @param tieline the employee tie line
      * @return a Employee instance that is qualified as an employee
      */
@@ -51,8 +51,8 @@ public class Employee {
     /**
      * Utility method to build a boss.
      *
-     * @param id the boss registration code
-     * @param name the boss name
+     * @param id      the boss registration code
+     * @param name    the boss name
      * @param tieline the boss tie line
      * @return a Employee instance that is qualified as a boss
      */

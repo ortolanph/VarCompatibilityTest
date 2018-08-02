@@ -44,7 +44,7 @@ public class CompatibilityTest {
         boss.setBoss(true);
         boss.setSalary(1000000.00);
 
-        System.out.printf("Retrieving Boss salary: %10.2f\n", boss.getSalary());
+        System.out.printf("Retrieving Boss salary: %10.2f%n", boss.getSalary());
 
         var employee1 = Employee.buildAnEmployee(2, "Hard Worker", 1001);
         var employee2 = Employee.buildAnEmployee(3, "Soft Worker", 1002);

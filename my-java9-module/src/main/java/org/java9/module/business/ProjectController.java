@@ -13,7 +13,9 @@ import java.util.List;
  */
 public class ProjectController {
 
-    /** List of all Validators */
+    /**
+     * List of all Validators
+     */
     List<Validator<Project>> validators =
         List.of(
             new NameValidator(),
@@ -23,7 +25,9 @@ public class ProjectController {
             new DatabasesValidator(),
             new TeamValidator(new BossValidator(), new EmployeeValidator()));
 
-    /** Validators messages */
+    /**
+     * Validators messages
+     */
     List<String> messages =
         List.of(
             "Invalid project name",

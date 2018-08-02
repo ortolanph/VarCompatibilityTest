@@ -4,14 +4,24 @@ package org.java7.api.entity;
  * The Programming Language enum.
  */
 public enum ProgrammingLanguage {
-    /** The Java programming language */
+    /**
+     * The Java programming language
+     */
     JAVA,
-    /** The JavaScript programming language */
+    /**
+     * The JavaScript programming language
+     */
     JAVASCRIPT,
-    /** The PL/SQL programming language */
+    /**
+     * The PL/SQL programming language
+     */
     PL_SQL,
-    /** The HyperText Markup Language version 5 */
+    /**
+     * The HyperText Markup Language version 5
+     */
     HTML5,
-    /** The Cascade Style Sheet language */
+    /**
+     * The Cascade Style Sheet language
+     */
     CSS
 }

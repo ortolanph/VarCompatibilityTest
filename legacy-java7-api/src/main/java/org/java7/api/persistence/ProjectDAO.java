@@ -25,7 +25,7 @@ public class ProjectDAO {
     /**
      * Returns the single instance of the ProjectDAO.
      *
-     * @return  the single instance of the ProjectDAO.
+     * @return the single instance of the ProjectDAO.
      */
     public static ProjectDAO getInstance() {
         return INSTANCE;

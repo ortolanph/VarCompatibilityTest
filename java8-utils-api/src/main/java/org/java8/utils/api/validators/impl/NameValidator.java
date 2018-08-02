@@ -18,6 +18,6 @@ public class NameValidator implements Validator<Project> {
      */
     @Override public boolean validate(Project project) {
         return !(Objects.isNull(project.getName()) ||
-            !project.getName().isEmpty());
+            project.getName().isEmpty());
     }
 }

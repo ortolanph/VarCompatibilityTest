@@ -1,45 +1,53 @@
 @startuml
 
-interface Validator<E> {
-    + boolean validate(E e)
-}
+left to right direction
 
-class BossValidator<Employee>
+package org.java8.utils.api {
 
-class BusinessCodeValidator<Project>
+    interface Validator<E> {
+        + boolean validate(E e)
+    }
 
-class DatabasesValidator<Project>
+    package impl {
 
-class DurationValidator<Project>
+        class BossValidator<Employee>
 
-class EmployeeValidator<Employee>
+        class BusinessCodeValidator<Project>
 
-class NameValidator<Project>
+        class DatabasesValidator<Project>
 
-class ProgrammingLanguageValidator<Project>
+        class DurationValidator<Project>
 
-class ProjectInstanceValidator<Project>
+        class EmployeeValidator<Employee>
 
-class TeamValidator<Project>
+        class NameValidator<Project>
 
-Validator <|-- BossValidator
+        class ProgrammingLanguageValidator<Project>
 
-Validator <|-- BusinessCodeValidator
+        class ProjectInstanceValidator<Project>
 
-Validator <|-- BusinessCodeValidator
+        class TeamValidator<Project>
 
-Validator <|-- DatabasesValidator
+    }
 
-Validator <|-- DurationValidator
+    Validator <|-- BossValidator
 
-Validator <|-- EmployeeValidator
+    Validator <|-- BusinessCodeValidator
 
-Validator <|-- NameValidator
+    Validator <|-- BusinessCodeValidator
 
-Validator <|-- ProgrammingLanguageValidator
+    Validator <|-- DatabasesValidator
 
-Validator <|-- ProjectInstanceValidator
+    Validator <|-- DurationValidator
 
-Validator <|-- TeamValidator
+    Validator <|-- EmployeeValidator
+
+    Validator <|-- NameValidator
+
+    Validator <|-- ProgrammingLanguageValidator
+
+    Validator <|-- ProjectInstanceValidator
+
+    Validator <|-- TeamValidator
 
 @enduml
